@@ -64,7 +64,7 @@ class PBSAuth implements \JsonSerializable {
    */
   public static function fromStdClass(\stdClass $record): PBSAuthResult {
     foreach (self::REQUIRED as $req) {
-      if (!property_exists($record, $req)) {
+      if (!isset($record->{$req})) {
         return PBSAuthResult::err(new \InvalidArgumentException("Malformed PBS auth. {$req} field is missing."));
       }
     }

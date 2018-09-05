@@ -89,7 +89,7 @@ class Token implements \JsonSerializable {
    */
   public static function fromStdClass(\stdClass $record): TokenResult {
     foreach (self::REQUIRED as $req) {
-      if (!property_exists($record, $req)) {
+      if (!isset($record->{$req})) {
         return TokenResult::err(new \InvalidArgumentException("Malformed token data. {$req} field is missing."));
       }
     }

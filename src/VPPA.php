@@ -70,18 +70,16 @@ class VPPA implements \JsonSerializable {
    */
   public static function fromStdClass(\stdClass $record): VPPAResult {
     foreach (self::REQUIRED as $req) {
-      if (!property_exists($record, $req)) {
-        VPPAResult::err(new \InvalidArgumentException("Malformed VPPA data. {$req} field is missing."));
+      if (!isset($record->{$req})) {
+        return VPPAResult::err(new \InvalidArgumentException("Malformed VPPA data. {$req} field is missing."));
       }
     }
 
     // Last updated date must parse properly as a date
-    if (isset($record->vppa_last_updated) && $record->vppa_last_updated) {
-      $lastUpdated = new \DateTime($record->activation_date);
+    $lastUpdated = new \DateTime($record->activation_date);
 
-      if ($lastUpdated === false) {
-        return VPPAResult::err(new \InvalidArgumentException("Malformed VPPA data. Last updated date field is not correctly formatted."));
-      }
+    if ($lastUpdated === false) {
+      return VPPAResult::err(new \InvalidArgumentException("Malformed VPPA data. Last updated date field is not correctly formatted."));
     }
 
     return VPPAResult::ok(

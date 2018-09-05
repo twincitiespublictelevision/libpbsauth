@@ -1,6 +1,6 @@
 # libpbsauth
 
-`libpbsauth` is a small package containing a couple of classes for structured
+`libpbsauth` is a small package containing a few classes for structured
 usage of PBS Sign In auth data.
 
 ---

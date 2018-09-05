@@ -11,7 +11,10 @@ use LibPBSAuth\Result\OwnerResult;
 class Owner implements \JsonSerializable {
 
   const REQUIRED = [
-    'pid', 'first_name', 'last_name', 'email', 'zip_code', 'analytics_id',
+    'pid', 'first_name', 'last_name', 'email', 'zip_code', 'analytics_id'
+  ];
+
+  const EXISTS = [
     'thumbnail_url'
   ];
 
@@ -111,8 +114,14 @@ class Owner implements \JsonSerializable {
    */
   public static function fromStdClass(\stdClass $record): OwnerResult {
     foreach (self::REQUIRED as $req) {
-      if (!property_exists($record, $req)) {
+      if (!isset($record->{$req})) {
         return OwnerResult::err(new \InvalidArgumentException("Malformed owner. {$req} field is missing."));
+      }
+    }
+
+    foreach (self::EXISTS as $req) {
+      if (!property_exists($record, $req)) {
+        return OwnerResult::err(new \InvalidArgumentException("Malformed owner. {$req} field must be present."));
       }
     }
 
