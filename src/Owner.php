@@ -145,7 +145,7 @@ class Owner implements \JsonSerializable {
         $record->email,
         $record->zip_code,
         $record->analytics_id,
-        $record->thumbnail_url,
+        $record->thumbnail_URL,
         $vppa
       )
     );
@@ -162,7 +162,7 @@ class Owner implements \JsonSerializable {
       'email' => $this->getEmail(),
       'zip_code' => $this->getZipCode(),
       'analytics_id' => $this->getAnalyticsId(),
-      'thumbnail_url' => $this->getThumbnailUrl(),
+      'thumbnail_URL' => $this->getThumbnailUrl(),
       'vppa' => $this->getVPPA()->toArray()
     ];
   }
