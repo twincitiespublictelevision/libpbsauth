@@ -76,7 +76,7 @@ class VPPA implements \JsonSerializable {
     }
 
     // Last updated date must parse properly as a date
-    $lastUpdated = new \DateTime($record->activation_date);
+    $lastUpdated = new \DateTime($record->vppa_last_updated);
 
     if ($lastUpdated === false) {
       return VPPAResult::err(new \InvalidArgumentException("Malformed VPPA data. Last updated date field is not correctly formatted."));
