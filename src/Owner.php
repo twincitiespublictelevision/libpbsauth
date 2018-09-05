@@ -15,7 +15,7 @@ class Owner implements \JsonSerializable {
   ];
 
   const EXISTS = [
-    'thumbnail_url'
+    'thumbnail_URL'
   ];
 
   /**
