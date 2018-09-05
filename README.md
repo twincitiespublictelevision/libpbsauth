@@ -7,6 +7,9 @@ usage of PBS Sign In auth data.
 
 ## Overview
 
+Provides classes for `Owner`, `VPPA`, and `Token` objects, along with a wrapper class
+`PBSAuth`. Creating a record returns a `*Result` class. The result encapsulates either 
+the created object or the error depending on the success of call.
 
 ## Requirements
 
@@ -22,4 +25,4 @@ usage of PBS Sign In auth data.
 }
 ```
 
-2. Run `composer update` to pull in the package
+2. Run `composer require twincitiespublictelevision/libpbsauth:dev-master` to pull in the package
