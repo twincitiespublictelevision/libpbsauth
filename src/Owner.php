@@ -163,7 +163,7 @@ class Owner implements \JsonSerializable {
       'zip_code' => $this->getZipCode(),
       'analytics_id' => $this->getAnalyticsId(),
       'thumbnail_URL' => $this->getThumbnailUrl(),
-      'vppa' => $this->getVPPA()->toArray()
+      'vppa' => $this->getVPPA() ? $this->getVPPA()->toArray() : null
     ];
   }
 
