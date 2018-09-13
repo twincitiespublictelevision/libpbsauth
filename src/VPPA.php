@@ -11,7 +11,11 @@ use LibPBSAuth\Result\VPPAResult;
 class VPPA implements \JsonSerializable {
 
   const REQUIRED = [
-    'vppa_accepted', 'vppa_last_updated'
+    'vppa_accepted'
+  ];
+
+  const EXISTS = [
+    'vppa_last_updated'
   ];
 
   const DATEFORMAT = 'Y-m-d H:i:s.uP';
@@ -75,11 +79,21 @@ class VPPA implements \JsonSerializable {
       }
     }
 
-    // Last updated date must parse properly as a date
-    $lastUpdated = new \DateTime($record->vppa_last_updated);
+    foreach (self::EXISTS as $req) {
+      if (!property_exists($record, $req)) {
+        return VPPAResult::err(new \InvalidArgumentException("Malformed VPPA data. {$req} field must be present."));
+      }
+    }
 
-    if ($lastUpdated === false) {
-      return VPPAResult::err(new \InvalidArgumentException("Malformed VPPA data. Last updated date field is not correctly formatted."));
+    // Last updated date must parse properly as a date if it is set
+    $lastUpdated = null;
+
+    if ($record->vppa_last_updated) {
+      $lastUpdated = new \DateTime($record->vppa_last_updated);
+
+      if ($lastUpdated === false) {
+        return VPPAResult::err(new \InvalidArgumentException("Malformed VPPA data. Last updated date field is not correctly formatted."));
+      }
     }
 
     return VPPAResult::ok(
@@ -96,7 +110,7 @@ class VPPA implements \JsonSerializable {
   public function toArray(): array {
     return [
       'vppa_accepted' => $this->isVPPAAccepted(),
-      'vppa_last_updated' => $this->getVPPALastUpdated()->format(self::DATEFORMAT)
+      'vppa_last_updated' => $this->getVPPALastUpdated() === null ? null : $this->getVPPALastUpdated()->format(self::DATEFORMAT)
     ];
   }
 
@@ -122,9 +136,9 @@ class VPPA implements \JsonSerializable {
   }
 
   /**
-   * @return \DateTime
+   * @return \DateTime|null
    */
-  public function getVPPALastUpdated(): \DateTime {
+  public function getVPPALastUpdated(): ?\DateTime {
     return $this->_vppaLastUpdated;
   }
 }
