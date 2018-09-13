@@ -10,12 +10,8 @@ use LibPBSAuth\Result\VPPAResult;
  */
 class VPPA implements \JsonSerializable {
 
-  const REQUIRED = [
-    'vppa_accepted'
-  ];
-
   const EXISTS = [
-    'vppa_last_updated'
+    'vppa_accepted', 'vppa_last_updated'
   ];
 
   const DATEFORMAT = 'Y-m-d H:i:s.uP';
@@ -73,12 +69,6 @@ class VPPA implements \JsonSerializable {
    * @return VPPAResult
    */
   public static function fromStdClass(\stdClass $record): VPPAResult {
-    foreach (self::REQUIRED as $req) {
-      if (!isset($record->{$req})) {
-        return VPPAResult::err(new \InvalidArgumentException("Malformed VPPA data. {$req} field is missing."));
-      }
-    }
-
     foreach (self::EXISTS as $req) {
       if (!property_exists($record, $req)) {
         return VPPAResult::err(new \InvalidArgumentException("Malformed VPPA data. {$req} field must be present."));
@@ -109,7 +99,7 @@ class VPPA implements \JsonSerializable {
    */
   public function toArray(): array {
     return [
-      'vppa_accepted' => $this->isVPPAAccepted(),
+      'vppa_accepted' => $this->_getVPPAAccepted(),
       'vppa_last_updated' => $this->getVPPALastUpdated() === null ? null : $this->getVPPALastUpdated()->format(self::DATEFORMAT)
     ];
   }
@@ -129,10 +119,21 @@ class VPPA implements \JsonSerializable {
   }
 
   /**
+   * @return bool|null
+   */
+  private function _getVPPAAccepted(): ?bool {
+    return $this->_vppaAccepted;
+  }
+
+  /**
    * @return bool
    */
   public function isVPPAAccepted(): bool {
-    return $this->_vppaAccepted;
+    if ($this->_getVPPAAccepted()) {
+      return true;
+    }
+
+    return false;
   }
 
   /**
