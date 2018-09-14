@@ -7,6 +7,8 @@ jobs:
       - checkout
       - run: composer install
       - run: ./vendor/bin/phpunit
+      - store_test_results:
+          path: tests/results
 
 workflows:
   version: 2
