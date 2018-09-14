@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  test:
+    docker:
+    - image: circleci/php:7.1
+    steps:
+      - checkout
+      - composer install
+      - phpunit
+
+workflows:
+  version: 2
+  testing:
+    jobs:
+    - test
