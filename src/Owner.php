@@ -11,11 +11,11 @@ use LibPBSAuth\Result\OwnerResult;
 class Owner implements \JsonSerializable {
 
   const REQUIRED = [
-    'pid', 'first_name', 'last_name', 'email', 'zip_code', 'analytics_id'
+    'pid', 'first_name', 'last_name', 'email', 'zip_code'
   ];
 
   const EXISTS = [
-    'thumbnail_URL'
+    'analytics_id', 'thumbnail_URL'
   ];
 
   /**
@@ -219,7 +219,7 @@ class Owner implements \JsonSerializable {
   /**
    * @return string
    */
-  public function getAnalyticsId(): string {
+  public function getAnalyticsId(): ?string {
     return $this->_analyticsId;
   }
 
