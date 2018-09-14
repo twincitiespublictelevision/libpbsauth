@@ -16,7 +16,12 @@
     "autoload": {
         "files": ["src/import_utils.php"],
         "psr-4": {
-            "LibPBSAuth\\": "src/"
+            "LibPBSAuth\\": "src/",
+            "Tests\\": "tests/"
         }
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.8",
+        "phpunit/phpunit": "^7"
     }
 }

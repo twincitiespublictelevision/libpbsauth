@@ -28,10 +28,10 @@ class VPPA implements \JsonSerializable {
 
   /**
    * VPPA constructor.
-   * @param string $vppaAccepted
-   * @param \DateTime $vppaLastUpdated
+   * @param bool|null $vppaAccepted
+   * @param \DateTime|null $vppaLastUpdated
    */
-  private function __construct(string $vppaAccepted, \DateTime $vppaLastUpdated) {
+  private function __construct(?bool $vppaAccepted, ?\DateTime $vppaLastUpdated) {
     $this->_vppaAccepted = $vppaAccepted;
     $this->_vppaLastUpdated = $vppaLastUpdated;
   }

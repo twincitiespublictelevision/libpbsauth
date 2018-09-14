@@ -44,17 +44,17 @@ class Owner implements \JsonSerializable {
   private $_zipCode;
 
   /**
-   * @var string
+   * @var null|string
    */
   private $_analyticsId;
 
   /**
-   * @var ?string
+   * @var null|string
    */
   private $_thumbnailUrl;
 
   /**
-   * @var ?VPPA
+   * @var null|VPPA
    */
   private $_vppa;
 
@@ -65,11 +65,11 @@ class Owner implements \JsonSerializable {
    * @param string $lastName
    * @param string $email
    * @param string $zipCode
-   * @param string $analyticsId
+   * @param null|string $analyticsId
    * @param null|string $thumbnailUrl
    * @param VPPA|null $vppa
    */
-  private function __construct(string $pid, string $firstName, string $lastName, string $email, string $zipCode, string $analyticsId, ?string $thumbnailUrl, ?VPPA $vppa) {
+  private function __construct(string $pid, string $firstName, string $lastName, string $email, string $zipCode, ?string $analyticsId, ?string $thumbnailUrl, ?VPPA $vppa) {
     $this->_pid = $pid;
     $this->_firstName = $firstName;
     $this->_lastName = $lastName;
@@ -217,7 +217,7 @@ class Owner implements \JsonSerializable {
   }
 
   /**
-   * @return string
+   * @return string|null
    */
   public function getAnalyticsId(): ?string {
     return $this->_analyticsId;
