@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: composer install
-      - run: phpunit
+      - run: ./vendor/bin/phpunit
 
 workflows:
   version: 2
