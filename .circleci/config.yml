@@ -5,8 +5,8 @@ jobs:
     - image: circleci/php:7.1
     steps:
       - checkout
-      - composer install
-      - phpunit
+      - run: composer install
+      - run: phpunit
 
 workflows:
   version: 2
