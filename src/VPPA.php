@@ -6,14 +6,26 @@ use LibPBSAuth\Result\VPPAResult;
 
 /**
  * Class VPPA
+ *
+ * Describes VPPA agreement information for the authenticated user and the
+ * authenticating station. Requires only that the vppa_accepted and
+ * vppa_last_updated fields are present. If vppa_last_updated contains a truthy
+ * value, then it must be able to be parsed into a \DateTime.
+ *
  * @package LibPBSAuth
  */
 class VPPA implements \JsonSerializable {
 
+  /**
+   * @var array
+   */
   const EXISTS = [
     'vppa_accepted', 'vppa_last_updated'
   ];
 
+  /**
+   * @var string
+   */
   const DATEFORMAT = 'Y-m-d H:i:s.uP';
 
   /**
@@ -126,6 +138,10 @@ class VPPA implements \JsonSerializable {
   }
 
   /**
+   * Gets the represented VPPA status. This does not perform validation as to
+   * when VPPA was accepted. The caller must use this in conjunction with
+   * getVPPALastUpdated() to determine if the acceptance is still valid.
+   *
    * @return bool
    */
   public function isVPPAAccepted(): bool {
@@ -137,6 +153,10 @@ class VPPA implements \JsonSerializable {
   }
 
   /**
+   * Gets the last time that VPPA was accepted by the user. Returns a \DateTime
+   * value if an acceptance date was available. If this represents a
+   * non-accepted VPPA agreement, then null if returned.
+   *
    * @return \DateTime|null
    */
   public function getVPPALastUpdated(): ?\DateTime {

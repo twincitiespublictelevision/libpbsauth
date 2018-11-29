@@ -6,10 +6,19 @@ use LibPBSAuth\Result\TokenResult;
 
 /**
  * Class Token
+ *
+ * Describes the access and refresh tokens for an authentication result.
+ * Requires that all relevant token fields contain non-null values. The expires
+ * field must also be an integer. The scope field should contain a string of
+ * one ore more space separated scopes.
+ *
  * @package LibPBSAuth
  */
 class Token implements \JsonSerializable {
 
+  /**
+   * @var array
+   */
   const REQUIRED = [
     'token_type', 'scope', 'access_token', 'refresh_token', 'expires'
   ];
@@ -144,6 +153,8 @@ class Token implements \JsonSerializable {
   }
 
   /**
+   * Returns the type of token being held.
+   *
    * @return string
    */
   public function getTokenType(): string {
@@ -151,6 +162,8 @@ class Token implements \JsonSerializable {
   }
 
   /**
+   * Returns an array of scopes that this token is valid for.
+   *
    * @return array
    */
   public function getScope(): array {
@@ -158,6 +171,8 @@ class Token implements \JsonSerializable {
   }
 
   /**
+   * Returns the access token for this authentication result.
+   *
    * @return string
    */
   public function getAccessToken(): string {
@@ -165,6 +180,8 @@ class Token implements \JsonSerializable {
   }
 
   /**
+   * Returns the refresh token for this authentication result.
+   *
    * @return string
    */
   public function getRefreshToken(): string {
@@ -172,6 +189,8 @@ class Token implements \JsonSerializable {
   }
 
   /**
+   * Returns the expiration value for this authentication result.
+   *
    * @return int
    */
   public function getExpires(): int {

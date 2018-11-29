@@ -6,14 +6,31 @@ use LibPBSAuth\Result\OwnerResult;
 
 /**
  * Class Owner
+ *
+ * Represents the owner data associated with a PBS Account authentication
+ * response. Requires that the pid, first_name, last_name, email, zip_code,
+ * analytics_id, and thumbnail_URL fields are present. Analytics_id and
+ * thumbnail_URL are the only two fields of the required fields that are allowed
+ * to be null.
+ *
+ * Additionally a VPPA field may or may not be present. The VPPA field may also
+ * potentially be null. In the case that the VPPA field contains a truthy value,
+ * then it must correctly parse to a VPPA object.
+ *
  * @package LibPBSAuth
  */
 class Owner implements \JsonSerializable {
 
+  /**
+   * @var array
+   */
   const REQUIRED = [
     'pid', 'first_name', 'last_name', 'email', 'zip_code'
   ];
 
+  /**
+   * @var array
+   */
   const EXISTS = [
     'analytics_id', 'thumbnail_URL'
   ];
@@ -182,6 +199,8 @@ class Owner implements \JsonSerializable {
   }
 
   /**
+   * Gets the PID of the authenticated user.
+   *
    * @return string
    */
   public function getPid(): string {
@@ -189,6 +208,8 @@ class Owner implements \JsonSerializable {
   }
 
   /**
+   * Gets the first name of the authenticated user.
+   *
    * @return string
    */
   public function getFirstName(): string {
@@ -196,6 +217,8 @@ class Owner implements \JsonSerializable {
   }
 
   /**
+   * Gets the last name of the authenticated user.
+   *
    * @return string
    */
   public function getLastName(): string {
@@ -203,6 +226,8 @@ class Owner implements \JsonSerializable {
   }
 
   /**
+   * Gets the email of the authenticated user.
+   *
    * @return string
    */
   public function getEmail(): string {
@@ -210,6 +235,8 @@ class Owner implements \JsonSerializable {
   }
 
   /**
+   * Gets the zipcode of the authenticated user.
+   *
    * @return string
    */
   public function getZipCode(): string {
@@ -217,6 +244,8 @@ class Owner implements \JsonSerializable {
   }
 
   /**
+   * Gets the optional analytics id of the authenticated user.
+   *
    * @return string|null
    */
   public function getAnalyticsId(): ?string {
@@ -224,6 +253,8 @@ class Owner implements \JsonSerializable {
   }
 
   /**
+   * Gets the optional thumbnail url of the authenticated user.
+   *
    * @return string|null
    */
   public function getThumbnailUrl(): ?string {
@@ -231,6 +262,10 @@ class Owner implements \JsonSerializable {
   }
 
   /**
+   * Gets the VPPA object representing the authenticated user's VPPA agreement.
+   * This may be null if VPPA information is missing or the VPPA scope has not
+   * been required during authentication.
+   *
    * @return VPPA|null
    */
   public function getVPPA(): ?VPPA {

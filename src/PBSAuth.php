@@ -6,10 +6,19 @@ use LibPBSAuth\Result\PBSAuthResult;
 
 /**
  * Class PBSAuth
+ *
+ * Represents the result of a PBS Account authentication. Acts primarily as a
+ * container for the Owner and Token pair of objects. The owner property must
+ * represent a valid Owner object and the token property must represent a valid
+ * Token object.
+ *
  * @package LibPBSAuth
  */
 class PBSAuth implements \JsonSerializable {
 
+  /**
+   * @var array
+   */
   const REQUIRED = [
     'owner', 'token'
   ];
@@ -113,6 +122,8 @@ class PBSAuth implements \JsonSerializable {
   }
 
   /**
+   * Gets this inner Owner object.
+   *
    * @return Owner
    */
   public function getOwner(): Owner {
@@ -120,6 +131,8 @@ class PBSAuth implements \JsonSerializable {
   }
 
   /**
+   * Gets the inner Token object.
+   *
    * @return Token
    */
   public function getToken(): Token {
