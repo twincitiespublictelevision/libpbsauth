@@ -1,4 +1,5 @@
 # libpbsauth
+[![CircleCI](https://circleci.com/gh/twincitiespublictelevision/libpbsauth/tree/master.svg?style=svg)](https://circleci.com/gh/twincitiespublictelevision/libpbsauth/tree/master)
 
 `libpbsauth` is a small package containing a few classes for structured
 usage of PBS Sign In auth data.
@@ -12,6 +13,8 @@ Provides classes for `Owner`, `VPPA`, and `Token` objects, along with a wrapper 
 the created object or the error depending on the success of call.
 
 ## Usage
+
+Documentation can be found at [https://twincitiespublictelevision.github.io/libpbsauth/](https://twincitiespublictelevision.github.io/libpbsauth/)
 
 Result classes provide a return style for capturing the success or failure of a
 given operation in a single return value. The value or error can then be extracted
