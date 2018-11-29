@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>LibPBSAuth\Owner | API</title>
+
+            <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:LibPBSAuth_Owner" data-root-path="../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../index.html">API</a>
+      </div>
+      <ul>
+        <li><a href="../classes.html">Classes</a></li>
+                  <li><a href="../namespaces.html">Namespaces</a></li>
+                <li><a href="../interfaces.html">Interfaces</a></li>
+        <li><a href="../traits.html">Traits</a></li>
+        <li><a href="../doc-index.html">Index</a></li>
+        <li><a href="../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../LibPBSAuth.html">LibPBSAuth</a></li>
+  
+            <li>Owner</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>Owner</h1>
+
+    <p>    class
+    <strong>Owner</strong>        implements
+        <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>
+</p>
+
+            <p>Class Owner</p>        <p>Represents the owner data associated with a PBS Account authentication
+response. Requires that the pid, first_name, last_name, email, zip_code,
+analytics_id, and thumbnail_URL fields are present. Analytics_id and
+thumbnail_URL are the only two fields of the required fields that are allowed
+to be null.</p>
+
+<p>Additionally a VPPA field may or may not be present. The VPPA field may also
+potentially be null. In the case that the VPPA field contains a truthy value,
+then it must correctly parse to a VPPA object.</p>    
+    
+            <h2>Constants</h2>
+
+            <table class="table">
+                    <tr>
+                <td><code class="language-php">REQUIRED =  [</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">EXISTS =  [</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../LibPBSAuth/Result/OwnerResult.html"><abbr title="LibPBSAuth\Result\OwnerResult">OwnerResult</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_fromJSON">fromJSON</a>(string $record)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../LibPBSAuth/Result/OwnerResult.html"><abbr title="LibPBSAuth\Result\OwnerResult">OwnerResult</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_fromArray">fromArray</a>(array $record)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../LibPBSAuth/Result/OwnerResult.html"><abbr title="LibPBSAuth\Result\OwnerResult">OwnerResult</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_fromStdClass">fromStdClass</a>(<a target="_blank" href="http://php.net/stdClass"><abbr title="stdClass">stdClass</abbr></a> $record)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_toArray">toArray</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a target="_blank" href="http://php.net/stdClass"><abbr title="stdClass">stdClass</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_toStdClass">toStdClass</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_jsonSerialize">jsonSerialize</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getPid">getPid</a>()</code>
+            </td>
+            <td>
+                                    Gets the PID of the authenticated user.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getFirstName">getFirstName</a>()</code>
+            </td>
+            <td>
+                                    Gets the first name of the authenticated user.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getLastName">getLastName</a>()</code>
+            </td>
+            <td>
+                                    Gets the last name of the authenticated user.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getEmail">getEmail</a>()</code>
+            </td>
+            <td>
+                                    Gets the email of the authenticated user.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getZipCode">getZipCode</a>()</code>
+            </td>
+            <td>
+                                    Gets the zipcode of the authenticated user.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getAnalyticsId">getAnalyticsId</a>()</code>
+            </td>
+            <td>
+                                    Gets the optional analytics id of the authenticated user.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getThumbnailUrl">getThumbnailUrl</a>()</code>
+            </td>
+            <td>
+                                    Gets the optional thumbnail url of the authenticated user.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="LibPBSAuth\LibPBSAuth\VPPA">VPPA</abbr>|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getVPPA">getVPPA</a>()</code>
+            </td>
+            <td>
+                                    Gets the VPPA object representing the authenticated user's VPPA agreement.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.104">104</a>
+                    </div>
+        <div>
+            <h3 id="method_fromJSON"><code class="language-php">fromJSON()</code></h3>
+            <code class="language-php">public static <a href="../LibPBSAuth/Result/OwnerResult.html"><abbr title="LibPBSAuth\Result\OwnerResult">OwnerResult</abbr></a>&nbsp;fromJSON(string $record)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$record</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../LibPBSAuth/Result/OwnerResult.html"><abbr title="LibPBSAuth\Result\OwnerResult">OwnerResult</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.117">117</a>
+                    </div>
+        <div>
+            <h3 id="method_fromArray"><code class="language-php">fromArray()</code></h3>
+            <code class="language-php">public static <a href="../LibPBSAuth/Result/OwnerResult.html"><abbr title="LibPBSAuth\Result\OwnerResult">OwnerResult</abbr></a>&nbsp;fromArray(array $record)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$record</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../LibPBSAuth/Result/OwnerResult.html"><abbr title="LibPBSAuth\Result\OwnerResult">OwnerResult</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.132">132</a>
+                    </div>
+        <div>
+            <h3 id="method_fromStdClass"><code class="language-php">fromStdClass()</code></h3>
+            <code class="language-php">public static <a href="../LibPBSAuth/Result/OwnerResult.html"><abbr title="LibPBSAuth\Result\OwnerResult">OwnerResult</abbr></a>&nbsp;fromStdClass(<a target="_blank" href="http://php.net/stdClass"><abbr title="stdClass">stdClass</abbr></a> $record)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a target="_blank" href="http://php.net/stdClass"><abbr title="stdClass">stdClass</abbr></a></code></td>
+                <td><code class="language-php">$record</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../LibPBSAuth/Result/OwnerResult.html"><abbr title="LibPBSAuth\Result\OwnerResult">OwnerResult</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.174">174</a>
+                    </div>
+        <div>
+            <h3 id="method_toArray"><code class="language-php">toArray()</code></h3>
+            <code class="language-php">public array&nbsp;toArray()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.190">190</a>
+                    </div>
+        <div>
+            <h3 id="method_toStdClass"><code class="language-php">toStdClass()</code></h3>
+            <code class="language-php">public <a target="_blank" href="http://php.net/stdClass"><abbr title="stdClass">stdClass</abbr></a>&nbsp;toStdClass()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a target="_blank" href="http://php.net/stdClass"><abbr title="stdClass">stdClass</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.197">197</a>
+                    </div>
+        <div>
+            <h3 id="method_jsonSerialize"><code class="language-php">jsonSerialize()</code></h3>
+            <code class="language-php">public mixed&nbsp;jsonSerialize()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.206">206</a>
+                    </div>
+        <div>
+            <h3 id="method_getPid"><code class="language-php">getPid()</code></h3>
+            <code class="language-php">public string&nbsp;getPid()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the PID of the authenticated user.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.215">215</a>
+                    </div>
+        <div>
+            <h3 id="method_getFirstName"><code class="language-php">getFirstName()</code></h3>
+            <code class="language-php">public string&nbsp;getFirstName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the first name of the authenticated user.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.224">224</a>
+                    </div>
+        <div>
+            <h3 id="method_getLastName"><code class="language-php">getLastName()</code></h3>
+            <code class="language-php">public string&nbsp;getLastName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the last name of the authenticated user.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.233">233</a>
+                    </div>
+        <div>
+            <h3 id="method_getEmail"><code class="language-php">getEmail()</code></h3>
+            <code class="language-php">public string&nbsp;getEmail()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the email of the authenticated user.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.242">242</a>
+                    </div>
+        <div>
+            <h3 id="method_getZipCode"><code class="language-php">getZipCode()</code></h3>
+            <code class="language-php">public string&nbsp;getZipCode()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the zipcode of the authenticated user.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.251">251</a>
+                    </div>
+        <div>
+            <h3 id="method_getAnalyticsId"><code class="language-php">getAnalyticsId()</code></h3>
+            <code class="language-php">public string|null&nbsp;getAnalyticsId()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the optional analytics id of the authenticated user.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.260">260</a>
+                    </div>
+        <div>
+            <h3 id="method_getThumbnailUrl"><code class="language-php">getThumbnailUrl()</code></h3>
+            <code class="language-php">public string|null&nbsp;getThumbnailUrl()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the optional thumbnail url of the authenticated user.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.271">271</a>
+                    </div>
+        <div>
+            <h3 id="method_getVPPA"><code class="language-php">getVPPA()</code></h3>
+            <code class="language-php">public <abbr title="LibPBSAuth\LibPBSAuth\VPPA">VPPA</abbr>|null&nbsp;getVPPA()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the VPPA object representing the authenticated user's VPPA agreement.</p>                    <p>This may be null if VPPA information is missing or the VPPA scope has not
+been required during authentication.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="LibPBSAuth\LibPBSAuth\VPPA">VPPA</abbr>|null</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+namespace LibPBSAuth;
+
+use LibPBSAuth\Result\OwnerResult;
+
+/**
+ * Class Owner
+ *
+ * Represents the owner data associated with a PBS Account authentication
+ * response. Requires that the pid, first_name, last_name, email, zip_code,
+ * analytics_id, and thumbnail_URL fields are present. Analytics_id and
+ * thumbnail_URL are the only two fields of the required fields that are allowed
+ * to be null.
+ *
+ * Additionally a VPPA field may or may not be present. The VPPA field may also
+ * potentially be null. In the case that the VPPA field contains a truthy value,
+ * then it must correctly parse to a VPPA object.
+ *
+ * @package LibPBSAuth
+ */
+class Owner implements \JsonSerializable {
+
+  /**
+   * @var array
+   */
+  const REQUIRED = [
+    &#039;pid&#039;, &#039;first_name&#039;, &#039;last_name&#039;, &#039;email&#039;, &#039;zip_code&#039;
+  ];
+
+  /**
+   * @var array
+   */
+  const EXISTS = [
+    &#039;analytics_id&#039;, &#039;thumbnail_URL&#039;
+  ];
+
+  /**
+   * @var string
+   */
+  private $_pid;
+
+  /**
+   * @var string
+   */
+  private $_firstName;
+
+  /**
+   * @var string
+   */
+  private $_lastName;
+
+  /**
+   * @var string
+   */
+  private $_email;
+
+  /**
+   * @var string
+   */
+  private $_zipCode;
+
+  /**
+   * @var null|string
+   */
+  private $_analyticsId;
+
+  /**
+   * @var null|string
+   */
+  private $_thumbnailUrl;
+
+  /**
+   * @var null|VPPA
+   */
+  private $_vppa;
+
+  /**
+   * Owner constructor.
+   * @param string $pid
+   * @param string $firstName
+   * @param string $lastName
+   * @param string $email
+   * @param string $zipCode
+   * @param null|string $analyticsId
+   * @param null|string $thumbnailUrl
+   * @param VPPA|null $vppa
+   */
+  private function __construct(string $pid, string $firstName, string $lastName, string $email, string $zipCode, ?string $analyticsId, ?string $thumbnailUrl, ?VPPA $vppa) {
+    $this-&gt;_pid = $pid;
+    $this-&gt;_firstName = $firstName;
+    $this-&gt;_lastName = $lastName;
+    $this-&gt;_email = $email;
+    $this-&gt;_zipCode = $zipCode;
+    $this-&gt;_analyticsId = $analyticsId;
+    $this-&gt;_thumbnailUrl = $thumbnailUrl;
+    $this-&gt;_vppa = $vppa;
+  }
+
+  /**
+   * @param string $record
+   * @return OwnerResult
+   */
+  public static function fromJSON(string $record): OwnerResult {
+    try {
+      $parsed = ex_json_decode($record);
+      return self::fromStdClass($parsed);
+    } catch (\Exception $e) {
+      return OwnerResult::err($e);
+    }
+  }
+
+  /**
+   * @param array $record
+   * @return OwnerResult
+   */
+  public static function fromArray(array $record): OwnerResult {
+
+    // Records do not get terribly large, so for simplicity we encode and then
+    // decode from JSON at the cost of a little performance
+    try {
+      return self::fromJSON(ex_json_encode($record));
+    } catch (\Exception $e) {
+      return OwnerResult::err($e);
+    }
+  }
+
+  /**
+   * @param \stdClass $record
+   * @return OwnerResult
+   */
+  public static function fromStdClass(\stdClass $record): OwnerResult {
+    foreach (self::REQUIRED as $req) {
+      if (!isset($record-&gt;{$req})) {
+        return OwnerResult::err(new \InvalidArgumentException(&quot;Malformed owner. {$req} field is missing.&quot;));
+      }
+    }
+
+    foreach (self::EXISTS as $req) {
+      if (!property_exists($record, $req)) {
+        return OwnerResult::err(new \InvalidArgumentException(&quot;Malformed owner. {$req} field must be present.&quot;));
+      }
+    }
+
+    $vppa = null;
+
+    if (isset($record-&gt;vppa)) {
+      $vppaRes = VPPA::fromStdClass($record-&gt;vppa);
+
+      if ($vppaRes-&gt;isError()) {
+        return OwnerResult::err($vppaRes-&gt;getErr());
+      }
+
+      $vppa = $vppaRes-&gt;value();
+    }
+
+    return OwnerResult::ok(
+      new Owner(
+        $record-&gt;pid,
+        $record-&gt;first_name,
+        $record-&gt;last_name,
+        $record-&gt;email,
+        $record-&gt;zip_code,
+        $record-&gt;analytics_id,
+        $record-&gt;thumbnail_URL,
+        $vppa
+      )
+    );
+  }
+
+  /**
+   * @return array
+   */
+  public function toArray(): array {
+    return [
+      &#039;pid&#039; =&gt; $this-&gt;getPid(),
+      &#039;first_name&#039; =&gt; $this-&gt;getFirstName(),
+      &#039;last_name&#039; =&gt; $this-&gt;getLastName(),
+      &#039;email&#039; =&gt; $this-&gt;getEmail(),
+      &#039;zip_code&#039; =&gt; $this-&gt;getZipCode(),
+      &#039;analytics_id&#039; =&gt; $this-&gt;getAnalyticsId(),
+      &#039;thumbnail_URL&#039; =&gt; $this-&gt;getThumbnailUrl(),
+      &#039;vppa&#039; =&gt; $this-&gt;getVPPA() ? $this-&gt;getVPPA()-&gt;toArray() : null
+    ];
+  }
+
+  /**
+   * @return \stdClass
+   */
+  public function toStdClass(): \stdClass {
+    return json_decode(json_encode($this));
+  }
+
+  /**
+   * @return mixed
+   */
+  public function jsonSerialize() {
+    return $this-&gt;toArray();
+  }
+
+  /**
+   * Gets the PID of the authenticated user.
+   *
+   * @return string
+   */
+  public function getPid(): string {
+    return $this-&gt;_pid;
+  }
+
+  /**
+   * Gets the first name of the authenticated user.
+   *
+   * @return string
+   */
+  public function getFirstName(): string {
+    return $this-&gt;_firstName;
+  }
+
+  /**
+   * Gets the last name of the authenticated user.
+   *
+   * @return string
+   */
+  public function getLastName(): string {
+    return $this-&gt;_lastName;
+  }
+
+  /**
+   * Gets the email of the authenticated user.
+   *
+   * @return string
+   */
+  public function getEmail(): string {
+    return $this-&gt;_email;
+  }
+
+  /**
+   * Gets the zipcode of the authenticated user.
+   *
+   * @return string
+   */
+  public function getZipCode(): string {
+    return $this-&gt;_zipCode;
+  }
+
+  /**
+   * Gets the optional analytics id of the authenticated user.
+   *
+   * @return string|null
+   */
+  public function getAnalyticsId(): ?string {
+    return $this-&gt;_analyticsId;
+  }
+
+  /**
+   * Gets the optional thumbnail url of the authenticated user.
+   *
+   * @return string|null
+   */
+  public function getThumbnailUrl(): ?string {
+    return $this-&gt;_thumbnailUrl;
+  }
+
+  /**
+   * Gets the VPPA object representing the authenticated user&#039;s VPPA agreement.
+   * This may be null if VPPA information is missing or the VPPA scope has not
+   * been required during authentication.
+   *
+   * @return VPPA|null
+   */
+  public function getVPPA(): ?VPPA {
+    return $this-&gt;_vppa;
+  }
+}</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>
