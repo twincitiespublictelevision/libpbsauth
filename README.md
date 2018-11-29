@@ -61,7 +61,7 @@ try {
 
 * PHP >= 7.1
 
-## Installing
+## Install
 
 1. Add to the **repositories** key of your **composer.json** file:
 ```
@@ -71,4 +71,4 @@ try {
 }
 ```
 
-2. Run `composer require twincitiespublictelevision/libpbsauth:dev-master` to pull in the package
+2. Run `composer require twincitiespublictelevision/libpbsauth` to pull in the package
