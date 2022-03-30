@@ -25,14 +25,14 @@ class Owner implements \JsonSerializable {
    * @var array
    */
   const REQUIRED = [
-    'pid', 'first_name', 'last_name', 'email', 'zip_code'
+    'pid', 'first_name', 'last_name', 'email'
   ];
 
   /**
    * @var array
    */
   const EXISTS = [
-    'analytics_id', 'thumbnail_URL'
+    'analytics_id', 'thumbnail_URL', 'zip_code'
   ];
 
   /**
@@ -239,7 +239,7 @@ class Owner implements \JsonSerializable {
    *
    * @return string
    */
-  public function getZipCode(): string {
+  public function getZipCode(): ?string {
     return $this->_zipCode;
   }
 
