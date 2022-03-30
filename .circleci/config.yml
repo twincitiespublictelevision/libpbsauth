@@ -40,6 +40,9 @@ jobs:
     docker:
       - image: circleci/php:7.4.9
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "SO:ME:FIN:G:ER:PR:IN:T"
       - run: echo $CIRCLE_SHA1 > .circle-sha
       - restore_cache:
           key: repo-{{ .Branch }}-{{ checksum ".circle-sha" }}
