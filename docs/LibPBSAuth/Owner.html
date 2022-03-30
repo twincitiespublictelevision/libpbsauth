@@ -230,7 +230,7 @@ then it must correctly parse to a VPPA object.</p>
                 <code class="language-php">
                                                             public                                    </code>
             </td>
-            <td class="text-right"><code class="language-php">string</code></td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
             <td>
                 <code class="language-php"><a href="#method_getZipCode">getZipCode</a>()</code>
             </td>
@@ -577,7 +577,7 @@ then it must correctly parse to a VPPA object.</p>
                     </div>
         <div>
             <h3 id="method_getZipCode"><code class="language-php">getZipCode()</code></h3>
-            <code class="language-php">public string&nbsp;getZipCode()</code>
+            <code class="language-php">public string|null&nbsp;getZipCode()</code>
         </div>
     </div>
 
@@ -589,7 +589,7 @@ then it must correctly parse to a VPPA object.</p>
 
                 <table class="table">
         <tr>
-            <td><code class="language-php">string</code></td>
+            <td><code class="language-php">string|null</code></td>
             <td></td>
         </tr>
     </table>
@@ -711,14 +711,14 @@ class Owner implements \JsonSerializable {
    * @var array
    */
   const REQUIRED = [
-    &#039;pid&#039;, &#039;first_name&#039;, &#039;last_name&#039;, &#039;email&#039;, &#039;zip_code&#039;
+    &#039;pid&#039;, &#039;first_name&#039;, &#039;last_name&#039;, &#039;email&#039;
   ];
 
   /**
    * @var array
    */
   const EXISTS = [
-    &#039;analytics_id&#039;, &#039;thumbnail_URL&#039;
+    &#039;analytics_id&#039;, &#039;thumbnail_URL&#039;, &#039;zip_code&#039;
   ];
 
   /**
@@ -925,7 +925,7 @@ class Owner implements \JsonSerializable {
    *
    * @return string
    */
-  public function getZipCode(): string {
+  public function getZipCode(): ?string {
     return $this-&gt;_zipCode;
   }
 
