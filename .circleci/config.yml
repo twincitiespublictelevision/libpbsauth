@@ -51,7 +51,7 @@ jobs:
           docs: ~/project/docs/
       - add_ssh_keys:
           fingerprints:
-            - "SO:ME:FIN:G:ER:PR:IN:T"
+            - "5c:0d:c4:d7:ea:83:ba:09:30:13:f6:a3:44:be:63:7c"
       - run:
           command: |
             rm .circle-sha
