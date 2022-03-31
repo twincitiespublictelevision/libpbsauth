@@ -56,7 +56,7 @@ class Owner implements \JsonSerializable {
   private $_email;
 
   /**
-   * @var string
+   * @var string|null
    */
   private $_zipCode;
 
@@ -86,7 +86,7 @@ class Owner implements \JsonSerializable {
    * @param null|string $thumbnailUrl
    * @param VPPA|null $vppa
    */
-  private function __construct(string $pid, string $firstName, string $lastName, string $email, string $zipCode, ?string $analyticsId, ?string $thumbnailUrl, ?VPPA $vppa) {
+  private function __construct(string $pid, string $firstName, string $lastName, string $email, ?string $zipCode, ?string $analyticsId, ?string $thumbnailUrl, ?VPPA $vppa) {
     $this->_pid = $pid;
     $this->_firstName = $firstName;
     $this->_lastName = $lastName;
